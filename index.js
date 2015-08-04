@@ -33,8 +33,9 @@ InstagramClient.prototype.fetch = function (path, params, callback) {
 	    raw += chunk;
 	});
 	res.on('end', function () {
+        var response = {};
         try {
-	       var response = JSON.parse(raw);
+	       response = JSON.parse(raw);
         } catch (e){
             console.log(e)
         }
